@@ -19,23 +19,33 @@ eventsApp.controller('EventController',
                     creatorName:'Horacio Delgado',
                     duration:'3:00 Hours',
                     level:'Advanced',
-                    abstract:'Cool class about React-Native'
+                    abstract:'Cool class about React-Native',
+                    upVoteCount: 1
                 },
                 {
                     name:'ASP.NET',
                     creatorName:'Anibal Castineyra',
                     duration:'4:00 Hours',
                     level:'Intermediate',
-                    abstract:'ASP.NET Core class'
+                    abstract:'ASP.NET Core class',
+                    upVoteCount: 2
                 },
                 {
                     name:'Golang',
                     creatorName:'Jonathan Hernandez',
                     duration:'2:00 Hours',
                     level:'Beginner',
-                    abstract:'Golang Basic class'
+                    abstract:'Golang Basic class',
+                    upVoteCount: 3
                 }
             ]
+        }
+
+        $scope.upVoteSession = function upVoteSession(session){
+                session.upVoteCount++;
+        }
+        $scope.downVoteSession = function downVoteSession(session){
+            if (session.upVoteCount>0) session.upVoteCount--;
         }
     }
 );
