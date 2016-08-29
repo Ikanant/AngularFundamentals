@@ -19,7 +19,7 @@ eventsApp.controller('EventController',
                 {
                     name:'React-Native',
                     creatorName:'Horacio Delgado',
-                    duration:'3:00 Hours',
+                    duration:3,
                     level:'Advanced',
                     abstract:'Cool class about React-Native',
                     upVoteCount: 4
@@ -27,7 +27,7 @@ eventsApp.controller('EventController',
                 {
                     name:'ASP.NET',
                     creatorName:'Anibal Castineyra',
-                    duration:'4:00 Hours',
+                    duration:4,
                     level:'Intermediate',
                     abstract:'ASP.NET Core class',
                     upVoteCount: 2
@@ -35,7 +35,7 @@ eventsApp.controller('EventController',
                 {
                     name:'Golang',
                     creatorName:'Jonathan Hernandez',
-                    duration:'2:00 Hours',
+                    duration:1,
                     level:'Beginner',
                     abstract:'Golang Basic class',
                     upVoteCount: 3
