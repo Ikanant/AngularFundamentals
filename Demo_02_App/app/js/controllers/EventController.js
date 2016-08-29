@@ -3,7 +3,7 @@
 eventsApp.controller('EventController',
     function EventController($scope) {
 
-        $scope.snippet = '<span style="color:red"> Hello there </span>';
+        $scope.sortorder = 'name'
 
         $scope.event = {
             name: 'Angular Test',
@@ -22,7 +22,7 @@ eventsApp.controller('EventController',
                     duration:'3:00 Hours',
                     level:'Advanced',
                     abstract:'Cool class about React-Native',
-                    upVoteCount: 1
+                    upVoteCount: 4
                 },
                 {
                     name:'ASP.NET',
