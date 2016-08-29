@@ -44,10 +44,20 @@
                   <option value="-upVoteCount">Votes</option>
                 </select>
 
+
+
+                Select Difficulty:
+                <select ng-model='query.level' class="input-medium">
+                  <option ng-selected value="">All</option>
+                  <option value="Beginner">Beginner</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Advanced">Advanced</option>
+                </select>
+
                 <hr />
 
                 <ul class="thumbnails">
-                    <li ng-repeat="session in event.sessions | orderBy:sortorder">
+                    <li ng-repeat="session in event.sessions | orderBy:sortorder | filter:query">
                         <div class="row session">
                             <div class="well span9">
                                 <h4 class="well-title">{{session.name}}</h4>
@@ -56,6 +66,7 @@
                                 <span>Level: {{session.level}}</span>
                                 <p>{{session.abstract}}</p>
                             </div>
+
                             <div class="span0 well votingWidget">
                                 <div class="votingButton" ng-click="upVoteSession(session)">
                                     <i class="icon-chevron-up icon-white"></i>
@@ -68,7 +79,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </li>
                 </ul>
 
