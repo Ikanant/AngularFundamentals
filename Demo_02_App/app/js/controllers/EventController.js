@@ -1,14 +1,15 @@
 'use strict';
 
 eventsApp.controller('EventController',
-    function EventController($scope, eventData, calculator) {
+    function EventController($scope, eventData) {
 
         $scope.sortorder = 'name'
 
         $scope.event = eventData.event;
 
-        $scope.a = '1';
-        $scope.b = '2';
+        $scope.totalVote = function(){
+          return eventData.getTotalVoteCount($scope.event);
+        };
 
         $scope.ourfunction = function(a, b){
           return calculator.reverse(a, b);

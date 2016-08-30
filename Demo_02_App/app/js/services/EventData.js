@@ -1,7 +1,11 @@
 eventsApp.factory('eventData', function(){
   return {
-    getTotalVoteCount: function(list){
-
+    getTotalVoteCount: function(pageEvent){
+      var total = 0;
+      for (var i=0; i<pageEvent.sessions.length; i++){
+        total += parseInt(pageEvent.sessions[i].upVoteCount);
+      }
+      return total;
     },
     event: {
         name: 'Angular Test',
