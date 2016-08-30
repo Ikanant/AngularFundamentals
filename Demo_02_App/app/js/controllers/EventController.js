@@ -6,12 +6,9 @@ eventsApp.controller('EventController',
         $scope.sortorder = 'name'
 
         $scope.event = eventData.getEvent()
-          .success(function(event){
-              $scope.event = event;
-            })
-          .error(function (data, status, headers, config){
-              $log.warn(data, status, headers, config);
-            });
+          .$promise
+          .then(function(event) {$scope.event = event; })
+          .catch(function(response) { console.log(response);});
 
         $scope.totalVote = function(){
           return eventData.getTotalVoteCount($scope.event);

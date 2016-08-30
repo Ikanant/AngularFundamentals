@@ -1,8 +1,8 @@
-eventsApp.factory('eventData', function($http){
+eventsApp.factory('eventData', function($resource){
   return {
     getTotalVoteCount: function(pageEvent){
       var total = 0;
-      if(pageEvent != undefined){
+      if(pageEvent.sessions != undefined){
         for (var i=0; i<pageEvent.sessions.length; i++){
           total += parseInt(pageEvent.sessions[i].upVoteCount);
         }
@@ -10,7 +10,7 @@ eventsApp.factory('eventData', function($http){
       return total;
     },
     getEvent: function() {
-      return $http({method: 'GET', url: '/data/event/1'});
+      return $resource('/data/event/:id', {id:'@id'}).get({id:1});
     }
   };
 });
