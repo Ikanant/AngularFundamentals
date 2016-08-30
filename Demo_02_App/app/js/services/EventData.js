@@ -1,5 +1,8 @@
 eventsApp.factory('eventData', function(){
   return {
+    getTotalVoteCount: function(list){
+
+    },
     event: {
         name: 'Angular Test',
         date: '01/01/1992',
