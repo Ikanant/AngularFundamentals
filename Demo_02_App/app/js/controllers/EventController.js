@@ -5,16 +5,16 @@ eventsApp.controller('EventController',
 
         $scope.sortorder = 'name'
 
-        $scope.event = eventData.getEvent(function(event){
-          $scope.event = event;
-        });
+        $scope.event = eventData.getEvent()
+          .success(function(event){
+              $scope.event = event;
+            })
+          .error(function (data, status, headers, config){
+              $log.warn(data, status, headers, config);
+            });
 
         $scope.totalVote = function(){
           return eventData.getTotalVoteCount($scope.event);
-        };
-
-        $scope.ourfunction = function(a, b){
-          return calculator.reverse(a, b);
         };
 
         $scope.upVoteSession = function upVoteSession(session){
