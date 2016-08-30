@@ -36,6 +36,6 @@ eventsApp.factory('eventData', function(){
                 upVoteCount: 3
             }
         ]
-    }
+     }
   };
 });
