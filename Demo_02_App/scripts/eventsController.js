@@ -7,7 +7,10 @@ module.exports.get = function(req, res) {
 };
 
 module.exports.save = function(req, res) {
+  var files = fs.readdirSync('app/data/event/');
+  var fileName = files.length + 1;
+
   var event = req.body;
-  fs.writeFileSync('app/data/event/' + req.params.id + '.json', JSON.stringify(event));
+  fs.writeFileSync('app/data/event/' + fileName + '.json', JSON.stringify(event));
   res.send(event);
 };
