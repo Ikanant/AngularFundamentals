@@ -1,4 +1,4 @@
-eventsApp.factory('eventData', function($resource){
+eventsApp.factory('eventData', function($resource, $timeout){
 
   var resource = $resource('/data/event/:id', {id:'@id'});
 
@@ -13,7 +13,12 @@ eventsApp.factory('eventData', function($resource){
       return total;
     },
     getEvent: function() {
-      return resource.get({id:1});
+      var event = resource.get({id:1});
+      var promise = $timeout(function(){
+        event.name = event.name + " !!!";
+      }, 1000);
+
+      return event;
     },
     saveEvent: function(event) {
       event.id = 999;
