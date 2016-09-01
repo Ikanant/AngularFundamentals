@@ -23,6 +23,9 @@ eventsApp.factory('eventData', function($resource, $timeout){
     saveEvent: function(event) {
       event.id = 999;
       return resource.save(event);
+    },
+    getAllEvents: function(){
+      return resource.query();
     }
   };
 });
