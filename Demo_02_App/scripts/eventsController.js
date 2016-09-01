@@ -15,15 +15,6 @@ module.exports.save = function(req, res) {
   res.send(event);
 };
 
-module.exports.save = function(req, res) {
-  var files = fs.readdirSync('app/data/event/');
-  var fileName = files.length + 1;
-
-  var event = req.body;
-  fs.writeFileSync('app/data/event/' + fileName + '.json', JSON.stringify(event));
-  res.send(event);
-};
-
 module.exports.getAll = function(req, res) {
    var path = 'app/data/event/';
 
