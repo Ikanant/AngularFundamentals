@@ -11,7 +11,12 @@ module.exports.save = function(req, res) {
   var fileName = files.length + 1;
 
   var event = req.body;
-  fs.writeFileSync('app/data/event/' + fileName + '.json', JSON.stringify(event));
+  var eventObject = JSON.stringify(event);
+  eventObject[id] = 4;
+  console.log("4: " + eventObject.id);
+
+
+  fs.writeFileSync('app/data/event/' + fileName + '.json', eventObject);
   res.send(event);
 };
 

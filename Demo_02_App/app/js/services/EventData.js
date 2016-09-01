@@ -12,8 +12,9 @@ eventsApp.factory('eventData', function($resource, $timeout){
       }
       return total;
     },
-    getEvent: function() {
-      var event = resource.get({id:1});
+    getEvent: function(eventId) {
+      console.log("==>" + eventId);
+      var event = resource.get({id:eventId});
       var promise = $timeout(function(){
         event.name = event.name + " !!!";
       }, 1000);
@@ -21,7 +22,7 @@ eventsApp.factory('eventData', function($resource, $timeout){
       return event;
     },
     saveEvent: function(event) {
-      event.id = 999;
+      event.id = 0;
       return resource.save(event);
     },
     getAllEvents: function(){
