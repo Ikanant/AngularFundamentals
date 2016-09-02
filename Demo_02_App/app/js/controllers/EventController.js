@@ -1,7 +1,7 @@
 'use strict';
 
 eventsApp.controller('EventController',
-    function EventController($scope, eventData, $anchorScroll, $routeParams) {
+    function EventController($scope, eventData, $anchorScroll, $routeParams, $route) {
 
         var idParam = $routeParams.eventId;
         $scope.sortorder = 'name'
@@ -24,6 +24,10 @@ eventsApp.controller('EventController',
 
         $scope.scrollToSession = function(){
           $anchorScroll();
+        }
+
+        $scope.reload = function(){
+          $route.reload();
         }
     }
 );
