@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(express.static(rootpath + '/app'));
 
 app.get('/data/event/:id', events.get);
-app.post('/data/event/:id', events.save);
+app.post('/data/event/', events.save);
 app.get('/data/event', events.getAll);
 app.get('*', function(req, res) { res.sendFile(rootpath + '/app/index.html'); });
 
