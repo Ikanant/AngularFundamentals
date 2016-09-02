@@ -1,15 +1,16 @@
 <html ng-app="eventsApp">
     <head>
         <title>Event Registration</title>
+        <base href="/" />
         <link rel="stylesheet" href="/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="/css/app.css"/>
     </head>
-    <body class="ng-cloak">
+    <body class="ng-cloak" ng-controller="IndexDefaultController">
         <div class="navbar">
             <div class="navbar-inner">
                 <div class="nav">
-                  <li><a href="#/eventDetails">Home</a></li>
-                  <li><a href="#/newEvent">Create Event</a></li>
+                  <li><a href="#" ng-click="eventDetails()">Home</a></li>
+                  <li><a href="#" ng-click="createEvent();">Create Event</a></li>
                 </div>
             </div>
         </div>
@@ -26,6 +27,7 @@
         <script src="/js/controllers/EventController.js"></script>
         <script src="/js/controllers/EditEventController.js"></script>
         <script src="/js/controllers/EventListController.js"></script>
+        <script src="/js/controllers/IndexDefaultController.js"></script>
         <script src="/js/services/EventData.js"></script>
         <script src="/js/filters.js"></script>
     </body>
