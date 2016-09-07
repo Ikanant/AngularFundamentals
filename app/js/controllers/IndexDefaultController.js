@@ -10,5 +10,9 @@ eventsApp.controller('IndexDefaultController',
       $location.replace();
       $location.url('eventDetails');
     }
+    $scope.editprofile = function(){
+      $location.replace();
+      $location.url('editProfile');
+    }
   }
 );
