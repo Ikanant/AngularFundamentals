@@ -5,5 +5,10 @@ eventsApp.directive('upvote', function(){
     restrict: 'E',
     replace: true,
     templateUrl: '/templates/directivesData/upVote.html',
+    scope:{
+      upvotefunction: "&",
+      downvotefunction: "&",
+      votecount: "="
+    }
   }
 });
